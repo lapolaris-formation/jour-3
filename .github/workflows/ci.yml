@@ -16,3 +16,23 @@ jobs:
 
       - name: Compiler 
         run: dotnet build
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v7
+
+      - name: Installer le SDK .NET 8
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restaurer les dépendances
+        run: dotnet restore
+
+      - name: Compiler
+        run: dotnet build --no-restore --configuration Release
+
+      - name: Exécuter les tests
+        run: dotnet test --no-build --configuration Release --verbosity normal
