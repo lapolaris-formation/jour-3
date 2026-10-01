@@ -1,4 +1,4 @@
-﻿using Jour3.Donnees;
+using Jour3.Donnees;
 using Jour3.Metier;
 using System;
 using System.Collections.Generic;
