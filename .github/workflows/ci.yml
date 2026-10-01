@@ -35,4 +35,15 @@ jobs:
         run: dotnet build --no-restore --configuration Release
 
       - name: Exécuter les tests
-        run: dotnet test --no-build --configuration Release --verbosity normal
+        run: >
+          dotnet test --no-build --configuration Release
+          --logger "trx;LogFileName=resultats.trx"
+          --results-directory ./TestResults
+
+      - name: Publier les résultats de test
+        uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: resultats-tests
+          path: ./TestResults
+          retention-days: 30
