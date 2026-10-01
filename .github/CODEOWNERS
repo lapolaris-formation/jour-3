@@ -1,0 +1,13 @@
+# Relecteurs par défaut sur l'ensemble du dépôt
+*                       @lapolaris-formation/developpeurs
+# Code source applicatif
+/src/                   @lapolaris-formation/developpeurs
+# Fichiers sensibles : workflows et configuration de sécurité
+/.github/               @lapolaris-formation/responsables
+/.github/workflows/    @lapolaris-formation/responsables 
+# Politique de sécurité (jour 4)
+/SECURITY.md            @lapolaris-formation/responsables
+# DLL de fournisseurs versionnées
+/lib/                   @lapolaris-formation/responsables
+# Documentation technique
+/docs/                  @lapolaris-formation/responsables
